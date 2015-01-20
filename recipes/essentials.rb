@@ -12,5 +12,5 @@ end
 
 execute "install.sh" do
   cwd "#{node["will_dev"]["home_path"]}/.wd"
-  user node["wil_dev"]["username"]
+  user node["will_dev"]["username"]
 end
