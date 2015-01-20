@@ -4,7 +4,7 @@ package "libicu52"
 
 # working directory
 git "#{node["will_dev"]["home_path"]}/.wd" do
-  repository "https://github.com:karlin/working-directory.git"
+  repository "git@github.com:karlin/working-directory.git"
   action :checkout
   user node["will_dev"]["username"]
   group node["will_dev"]["username"]
