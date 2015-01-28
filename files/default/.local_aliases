@@ -1,3 +1,4 @@
 alias xbrake="xvfb-run bundle exec rake"
 alias xbrspec="xvfb-run bundle exec rspec"
 alias qspec="rspec spec/lib spec/controllers spec/models"
+alias xbuke="xvfb-run bundle exec cucumber"
