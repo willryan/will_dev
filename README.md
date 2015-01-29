@@ -1,8 +1,10 @@
 # will_dev
 Dev environment settings I use
 
-Install by curling and running install_will_dev.sh: 
+Include this repo via git in a Berksfile in a directory for "personal" cookbooks.
+In your dev env, add "my-cookbooks" to .gitignore.
+> cp cook.sh project_dev_env/my-cookbooks
+> ./vendor_my_cookbooks.sh
+Now you can go to /vagrant/my-cookbooks on the VM and run
+> ./cook.sh
 
-https://raw.githubusercontent.com/willryan/will_dev/master/install_will_dev.sh
-
-Assumes ruby, chef, and berkshelf are already installed.
