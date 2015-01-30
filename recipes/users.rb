@@ -9,12 +9,9 @@ directory ".ssh" do
   group node["will_dev"]["username"]
 end
 
-cookbook_file "/etc/ssh/ssh_known_hosts" do
-  source "known_hosts"
-  owner node["will_dev"]["username"]
-  group node["will_dev"]["username"]
-  mode 00744
-end
+ssh_known_hosts_entry 'github.com'
+ssh_known_hosts_entry 'gitlab.atomicobject.com'
+ssh_known_hosts_entry 'gitorious.atomicobject.com'
 
 gem_package "homesick"
 
