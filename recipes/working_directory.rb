@@ -10,10 +10,10 @@ execute "./install.sh" do
   user node["will_dev"]["username"]
 end
 
-directory "#{node["will_dev"]["home_path"]}/.working-directory-repo" do
-  recursive true
-  action :delete
-end
+# directory "#{node["will_dev"]["home_path"]}/.working-directory-repo" do
+#   recursive true
+#   action :delete
+# end
 
 ruby_block "add wd to bashrc" do
   block do
