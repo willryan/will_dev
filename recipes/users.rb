@@ -9,7 +9,7 @@ directory ".ssh" do
   group node["will_dev"]["username"]
 end
 
-cookbook_file "#{node["will_dev"]["home_path"]}/.ssh/known_hosts" do
+cookbook_file "/etc/ssh/known_hosts" do
   source "known_hosts"
   owner node["will_dev"]["username"]
   group node["will_dev"]["username"]
