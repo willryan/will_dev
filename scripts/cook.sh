@@ -1,3 +1,3 @@
 #!/bin/sh
 
-chef-client -z -o "$@"
+sudo chef-client -z -o "$@"
