@@ -9,11 +9,11 @@ directory ".ssh" do
   group node["will_dev"]["username"]
 end
 
-["github.com", "gitlab.atomicobject.com", "gitorious.atomicobject.com"].each do |url|
-  ssh_known_hosts url do
-    hashed true
-    user node["will_dev"]["username"]
-  end
+cookbook_file "#{node["will_dev"]["home_path"]}/.ssh/known_hosts" do
+  source "known_hosts"
+  owner node["will_dev"]["username"]
+  group node["will_dev"]["username"]
+  mode 00744
 end
 
 gem_package "homesick"
