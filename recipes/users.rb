@@ -33,7 +33,7 @@ end
 
 ruby_block "add ps1 to bashrc" do
   block do
-    fe = Chef::Util::FileEdit.new("/home/#{node["ruby"]["user"]}/.bashrc")
+    fe = Chef::Util::FileEdit.new("#{node["will_dev"]["home_path"]}/.bashrc")
     fe.insert_line_if_no_match(/ps1\.sh/, "if [ -f ~/.ps1.sh ]; then\n  . ~/.ps1.sh\nfi\n")
     fe.write_file
   end
