@@ -9,9 +9,12 @@ directory ".ssh" do
   group node["will_dev"]["username"]
 end
 
-ssh_known_hosts_entry 'github.com'
-ssh_known_hosts_entry 'gitlab.atomicobject.com'
-ssh_known_hosts_entry 'gitorious.atomicobject.com'
+["github.com", "gitlab.atomicobject.com", "gitorious.atomicobject.com"].each do |url|
+  ssh_known_hosts url do
+    hashed true
+    user node["will_dev"]["username"]
+  end
+end
 
 gem_package "homesick"
 
