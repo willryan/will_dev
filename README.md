@@ -1,10 +1,14 @@
 # will_dev
 Dev environment settings I use
 
-Include this repo via git in a Berksfile in a directory for "personal" cookbooks.
-In your dev env, add "my-cookbooks" to .gitignore.
-> cp cook.sh project_dev_env/my-cookbooks
-> ./vendor_my_cookbooks.sh
-Now you can go to /vagrant/my-cookbooks on the VM and run
-> ./cook.sh
+Instructions for using a personal cookbook:
+* Create a directory where you will keep your list of the names of your personal cookbooks.
+* In that directory create a Berksfile which includes your personal cookbooks, presumably sourced from git.
+* Run "berks install".
+* Run "berks vendor [DESTINATION]" and give [DESTINATION] a directory inside the vagrant home for your current project (i.e. the folder with your Vagrantfile in it).  You can use scripts/vendor-my-berks.sh as a template, it will vendor to [argument to script]/my-cookbooks/cookbooks. You want this directory to be ignored by git, so make sure its name is in your project .gitignore.
+* vagrant ssh into your VM.
+* If you are pulling in git repos, you may have trouble getting all the correct known_hosts entries in the cookbook file that copies them over. If so, I advise doing git ls-files or similar to add the repo ips into your known_hosts.
+* Run "sudo -i" to switch to sudo.  This is usually necessary if you are installing packages.
+* cd to /vagrant/my-cookbooks (or whatever directory you vendored the cookbooks to).
+* Run chef zero on  your cookbook(s). scripts/cook.sh can be used as a template. 
 
