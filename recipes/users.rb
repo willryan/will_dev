@@ -20,7 +20,7 @@ gem_package "homesick"
 
 homesick_castle "homesick_public" do
   user 'vagrant'
-  source 'git@github.com:willryan/homesick_public.git'
+  source 'git://github.com/willryan/homesick_public.git'
   action :update
 end
 
