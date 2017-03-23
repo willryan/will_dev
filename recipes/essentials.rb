@@ -1,4 +1,4 @@
 package "git"
 package "libfontconfig1"
-package "libicu52"
+package "libicu55"
 
